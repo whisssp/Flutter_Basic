@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:tutorial/lesson2/component/my_button.dart';
+import 'package:tutorial/lesson2/component/square_tile.dart';
 
 import 'component/my_textfield.dart';
 
@@ -20,7 +21,7 @@ class SignIn extends StatelessWidget {
   Widget build(BuildContext context) {
     final String signInText = 'Sign In'.toUpperCase();
     return Padding(
-      padding: const EdgeInsets.all(32),
+      padding: const EdgeInsets.all(30),
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -57,11 +58,11 @@ class SignIn extends StatelessWidget {
             MyButton(onTap: signIn),
 
             const Padding(
-              padding: EdgeInsets.symmetric(vertical: 25),
+              padding: EdgeInsets.symmetric(vertical: 25, horizontal: 25),
               child: Row(
                 children: [
                   Expanded(
-                      child: Divider(thickness: 2)
+                    child: Divider(thickness: 2)
                   ),
                   SizedBox(width: 10),
                   Text("Or continue with"),
@@ -71,6 +72,15 @@ class SignIn extends StatelessWidget {
                   )
                 ],
               ),
+            ),
+
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SquareTile(imageUrl: 'assets/images/google.png', width: 75.0),
+                SizedBox(width: 45),
+                SquareTile(imageUrl: 'assets/images/apple.png'),
+              ],
             )
           ],
         )
